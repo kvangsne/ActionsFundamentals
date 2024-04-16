@@ -13,12 +13,12 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: test
         run: |
           echo ${{ github.event_name }}
           echo ${{ github.ref }}
-          tree
+          echo ls
     
