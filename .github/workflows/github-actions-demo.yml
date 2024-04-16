@@ -5,7 +5,7 @@ on:
     branches: 
       - main
     paths-ignore: 
-      - '/.github/**'
+      - '/.github/*'
   pull_request:
     branches: main
   schedule:
@@ -20,5 +20,5 @@ jobs:
         run: |
           echo ${{ github.event_name }}
           echo ${{ github.ref }}
-          echo tree
+          tree
     
