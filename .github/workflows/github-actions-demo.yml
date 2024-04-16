@@ -1,0 +1,24 @@
+name: Github Actions Demo
+
+on: 
+  push:
+    branches: 
+      - main
+    paths-ignore: 
+      - '/.github/**'
+  pull_request:
+    branches: main
+  schedule:
+    - cron: 0 6 * * 0
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: test
+        run: |
+          echo ${{ github.event_name }}
+          echo ${{ github.ref }}
+          echo tree
+    
