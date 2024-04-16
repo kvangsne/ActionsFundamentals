@@ -1,0 +1,22 @@
+name: Hello World Docker Ci
+
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: Who to greet
+        required: true
+        default: 'World'
+        type: string
+
+jobs:
+  say_hello:
+    name: Say Hello
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print to Log
+      id: print-to-log
+      uses: actions/hello-world-docker-action@main
+      with:
+        who-to-greet: ${{ inputs:who-to-greet }}
