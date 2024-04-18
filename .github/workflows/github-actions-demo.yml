@@ -16,7 +16,7 @@ on:
     inputs:
       enviroments:
         description: 'Environment to deploy to'
-        type: enviroment
+        type: environment
         required: true
 jobs:
   build:
